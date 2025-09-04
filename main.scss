@@ -1,1 +1,66 @@
+body{
+  margin: 0;
+  font-family: Arial;
+}
 
+.people {
+}
+.person {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    &__photo{
+        max-width: 200px;
+        position: relative;
+    }
+
+    &__photo > img {
+        width: 200px;
+        height: 200px;
+        
+
+        border-radius: 50%;
+    }
+
+    &__rank {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: #fff;
+
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        line-height: 32px;
+        color: #8B0000;
+
+        position: absolute;
+        top: calc( 50% - 16px );
+        right: 10px;
+    }
+
+    &__details {
+        text-align: center;
+    }
+
+    &__name {
+        color: #2F4F4F;
+        font-family: Arial;
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    &__extra {
+        display: none;
+    }
+
+    &__sport {
+    }
+
+    &__pay {
+    }
+}
