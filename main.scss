@@ -1,66 +1,105 @@
-body{
+body {
   margin: 0;
   font-family: Arial;
 }
 
 .people {
+  padding-top: 30px;
+  display: grid;
+  gap: 0 20px;
+  justify-content: center;
+  grid-template-columns: repeat(2, 220px);
 }
+
+@media (min-width: 1000px) {
+  .people {
+    grid-template-columns: repeat(4, 220px);
+  }
+}
+
 .person {
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 1s;
+  
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  &:hover{
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    position: relative;
+    z-index: 999;
     
-    &__photo{
-        max-width: 200px;
-        position: relative;
-    }
+    transform: scale(1.3);
+  }
+  &:hover .person__extra{
+    visibility: visible;
+  }
 
-    &__photo > img {
-        width: 200px;
-        height: 200px;
-        
+   &:hover .person__photo > img{
+    border-radius: 60px
+  }
 
-        border-radius: 50%;
-    }
+  &__photo {
+    max-width: 200px;
+    position: relative;
+  }
 
-    &__rank {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background-color: #fff;
+  &__photo > img {
+    width: 200px;
+    height: 200px;
 
-        font-weight: 700;
-        font-size: 16px;
-        text-align: center;
-        line-height: 32px;
-        color: #8B0000;
+    border-radius: 50%;
 
-        position: absolute;
-        top: calc( 50% - 16px );
-        right: 10px;
-    }
+    transition: 1s;
+  }
 
-    &__details {
-        text-align: center;
-    }
+  &__rank {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
 
-    &__name {
-        color: #2F4F4F;
-        font-family: Arial;
-        font-weight: 700;
-        font-size: 20px;
-        text-align: center;
-    }
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    line-height: 32px;
+    color: #8b0000;
 
-    &__extra {
-        display: none;
-    }
+    position: absolute;
+    top: calc(50% - 16px);
+    right: 10px;
+  }
 
-    &__sport {
-    }
+  &__details {
+    text-align: center;
+  }
 
-    &__pay {
-    }
+  &__name {
+    color: #2f4f4f;
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__extra {
+    visibility: hidden;
+    margin-top: 9px;
+
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #000000;
+
+  }
+
+  &__sport {
+  }
+
+  &__pay {
+  }
 }
